@@ -52,12 +52,14 @@ interface Props {
 
 const SearchPanel: FC<Props> = ({ title, children }) => (
     <Grid container>
+        <Grid>
         <Typography variant="h4" component="h2">
             {title}
         </Typography>
-        <div>
+        </Grid>
+        <Grid>
             {children}
-        </div>
+        </Grid>
     </Grid>
 );
 

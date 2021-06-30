@@ -73,7 +73,7 @@ const theme = createMuiTheme({
   },
 });
 
-function App() {
+const App: FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <Router>

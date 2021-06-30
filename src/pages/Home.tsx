@@ -10,7 +10,7 @@ import {
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import { Box, Container, Grid, Divider } from '@material-ui/core/';
+import { Box, Container, Divider } from '@material-ui/core/';
 
 import Header from '../layout/Header';
 import ClinicSearch from "../components/ClinicSearch"
@@ -56,7 +56,7 @@ export const Home: FC = () => {
           </Container>
         </main>
         <footer className={classes.footer}>
-          
+
         </footer>
       </Box>
   );

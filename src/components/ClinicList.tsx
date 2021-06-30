@@ -13,6 +13,8 @@ interface Props {
     zip: string,
 };
 
+// ClinicList should receive JSON that resembles the Clinic.interface Model and format that into a list of cards to be returned
+
 const ClinicList: FC<Props> = ({ zip }) => {
     const loading = false;
     const clinicSearchUrl: string = 'https://npin.cdc.gov/api/organization/proximity?prox[origin]=' + zip;

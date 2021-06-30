@@ -6,6 +6,8 @@ const instance = axios.create({
 	timeout: 15000,
 });
 
+const cdcHeaders = { headers: { "Access-Control-Allow-Origin": true } }
+
 const responseBody = (response: AxiosResponse) => response.data;
 
 const requests = {
