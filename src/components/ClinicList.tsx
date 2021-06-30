@@ -1,15 +1,13 @@
-import React, { useContext, useRef, FC } from 'react'
+import React, { FC } from 'react'
 
 import axios from 'axios';
 
-import { Grid, TextField } from '@material-ui/core'
-import Button from '@material-ui/core/Button'
+import { Grid } from '@material-ui/core'
 
 import ClinicCard from './ClinicCard';
-import SearchPanel from './SearchPanel';
 
-import { ClinicType } from '../models/clinic.interface';
-import { Clinic } from '../api/clinic_api';
+//import { ClinicType } from '../models/clinic.interface';
+//import { Clinic } from '../api/clinic_api';
 
 interface Props {
     zip: string,
@@ -17,7 +15,8 @@ interface Props {
 
 const ClinicList: FC<Props> = ({ zip }) => {
     const loading = false;
-    const clinics: any = axios.get('https://npin.cdc.gov/api/organization/proximity?prox[origin]=' + zip);
+    const clinicSearchUrl: string = 'https://npin.cdc.gov/api/organization/proximity?prox[origin]=' + zip;
+    const clinics: any = axios.get(clinicSearchUrl, { headers: { "Access-Control-Allow-Origin": true } });
 
     return (
         <Grid

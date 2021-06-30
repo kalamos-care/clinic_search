@@ -1,8 +1,8 @@
 
 import React, { FC } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-// import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+//import Container from '@material-ui/core/Container';
 // import Button from '../components/Button';
 import Typography from '@material-ui/core/Typography';
 
@@ -51,14 +51,14 @@ interface Props {
 };
 
 const SearchPanel: FC<Props> = ({ title, children }) => (
-    <Container>
+    <Grid container>
         <Typography variant="h4" component="h2">
             {title}
         </Typography>
         <div>
             {children}
         </div>
-    </Container>
+    </Grid>
 );
 
 export default SearchPanel;

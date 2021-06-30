@@ -1,11 +1,8 @@
 import React, { useContext, useRef, FC } from 'react'
 
-import axios from 'axios';
-
 import { Grid, TextField } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
 
-import ClinicCard from './ClinicCard';
 import ClinicList from './ClinicList';
 import SearchPanel from './SearchPanel';
 import { stringify } from 'querystring';
@@ -19,11 +16,11 @@ interface Props {
 
 
 const ClinicSearch: FC = () => {
-    const searchTermEl = useRef(null);
+    const searchTermEl = useRef("");
 
     return (
         <SearchPanel title="Find a Clinic">
-            <div>
+            <Grid>
                 <form>
                     <TextField
                         id="searchTerm"
@@ -35,14 +32,14 @@ const ClinicSearch: FC = () => {
                         variant="text"
                         color="default"
                         type="button"
-                        onClick={() => searchTermEl.current.value
+                        onClick={() => searchTermEl.current
                         }
                     >
                         Submit
                     </Button>
                 </form>
-            </div>
-            <ClinicList zip={searchTermEl} />
+            </Grid>
+            <ClinicList zip={searchTermEl.current} />
         </SearchPanel>
     );
 };
