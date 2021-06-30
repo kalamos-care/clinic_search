@@ -11,9 +11,13 @@ import SearchPanel from './SearchPanel';
 import { ClinicType } from '../models/clinic.interface';
 import { Clinic } from '../api/clinic_api';
 
+interface Props {
+    zip: string,
+};
+
 const ClinicList: FC<Props> = ({ zip }) => {
     const loading = false;
-    const clinics = axios.get('https://npin.cdc.gov/api/organization/proximity?prox[origin]=' + zip);
+    const clinics: any = axios.get('https://npin.cdc.gov/api/organization/proximity?prox[origin]=' + zip);
 
     return (
         <Grid
@@ -24,7 +28,7 @@ const ClinicList: FC<Props> = ({ zip }) => {
             alignItems="stretch"
         >
             {
-                clinics.length ? clinics.map((clinic) =>
+                clinics.length ? clinics.map((clinic: any) =>
                     <Grid
                         item
                         key={clinic.field_org_id}

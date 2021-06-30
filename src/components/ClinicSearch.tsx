@@ -8,38 +8,26 @@ import Button from '@material-ui/core/Button'
 import ClinicCard from './ClinicCard';
 import ClinicList from './ClinicList';
 import SearchPanel from './SearchPanel';
+import { stringify } from 'querystring';
 
-import { ClinicType } from '../models/clinic.interface';
-import { Clinic } from '../api/clinic_api';
 
 interface Props {
-    //payload = {},
     zip: string,
-    clinics: [],
-    clinic: {
-        field_org_id: string,
-        title_field: string,
-        field_org_street1: string,
-        field_org_street2: string,
-        field_org_city_name: string,
-        field_org_state: string,
-        field_org_zipcode: string,
-        field_org_phone: string,
-    },
     loading: boolean,
 };
 
 
 
-const ClinicSearch = () => {
-    const searchTermEl = "";
-    const updateProximityOrigin = ();
+const ClinicSearch: FC = () => {
+    const searchTermEl = useRef(null);
 
     return (
         <SearchPanel title="Find a Clinic">
             <div>
                 <form>
                     <TextField
+                        id="searchTerm"
+                        type="text"
                         inputRef={searchTermEl}
                         placeholder="Enter Location"
                     />
@@ -47,8 +35,7 @@ const ClinicSearch = () => {
                         variant="text"
                         color="default"
                         type="button"
-                        onClick={
-                            () => searchTermEl.current.value
+                        onClick={() => searchTermEl.current.value
                         }
                     >
                         Submit

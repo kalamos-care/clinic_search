@@ -14,6 +14,7 @@ import { Box, Container, Grid, Divider } from '@material-ui/core/';
 
 import Header from '../layout/Header';
 import ClinicSearch from "../components/ClinicSearch"
+import SearchPanel from '../components/SearchPanel';
 
 const useStyles = makeStyles((theme) => ({
   public: {
@@ -64,7 +65,7 @@ export const Home: FC = () => {
             <Grid container>
               <Grid item xs={12}>
                 <h2>Insert search function here</h2>
-                {/* <ClinicSearch /> */}
+                <ClinicSearch />
               </Grid>
             </Grid>
           </Container>
