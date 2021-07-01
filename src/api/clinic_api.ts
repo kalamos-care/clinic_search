@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 import { ClinicType } from '../models/clinic.interface';
 
 const instance = axios.create({
-	baseURL: 'https://npin.cdc.gov/api/organization/',
+	baseURL: 'https://kalamos.care',
 	timeout: 15000,
 });
 
@@ -18,7 +18,7 @@ const requests = {
 };
 
 export const Clinic = {
-	getClinicsByZip: (zip: string): Promise<ClinicType[]> => requests.get('proximity?prox[origin]=' + zip),
+	getClinicsByZip: (zip: string): Promise<ClinicType[]> => requests.get('https://npin.cdc.gov/api/organization/proximity?prox[origin]=' + zip),
 	//getAClinic: (id: number): Promise<ClinicType> => requests.get(`posts/${id}`),
 	//createPost: (post: PostType): Promise<PostType> =>
 	//	requests.post('posts', post),
