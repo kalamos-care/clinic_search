@@ -74,7 +74,7 @@ const footers = [
       },
     ],
   },
-  {
+/*   {
     title: 'Product',
     subheaders: [
       {
@@ -86,7 +86,7 @@ const footers = [
         url: '/product/pricing',
       },
     ],
-  },
+  }, */
   {
     title: 'Resources',
     subheaders: [

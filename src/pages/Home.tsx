@@ -10,12 +10,12 @@ import {
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import { Box, Container, Divider } from '@material-ui/core/';
+import { Box } from '@material-ui/core/';
 
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
-import ClinicSearch from "../components/ClinicSearch"
-import Hero from '../components/Hero';
+
+import ClinicSearch from '../components/ClinicSearch';
 
 const useStyles = makeStyles((theme) => ({
   public: {
@@ -36,8 +36,10 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     display: 'flex',
     textAlign: 'center',
-    position: 'relative',
+    position: 'absolute',
+    width: '100%',
     bottom: '0',
+    backgroundColor: '#f4effc',
   },
 }));
 
@@ -45,20 +47,16 @@ export const Home: FC = () => {
   const classes = useStyles();
 
   return (
-      <Box className={classes.public}>
-        <header className={classes.header}>
-          <Header />
-        </header>
-        <main className={classes.main}>
-          <Container maxWidth="md">
-            <Hero />
-            <Divider />
-            <ClinicSearch />
-          </Container>
-        </main>
-        <footer className={classes.footer}>
-          <Footer />
-        </footer>
-      </Box>
+    <Box className={classes.public}>
+      <header className={classes.header}>
+        <Header />
+      </header>
+      <main className={classes.main}>
+        <ClinicSearch />
+      </main>
+      <footer className={classes.footer}>
+        <Footer />
+      </footer>
+    </Box>
   );
 };

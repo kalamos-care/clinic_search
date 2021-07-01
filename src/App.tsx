@@ -2,11 +2,15 @@ import React, { FC } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import { ThemeProvider } from '@material-ui/styles';
-import { createMuiTheme } from '@material-ui/core/styles';
-
+import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import { PublicRoutes } from './PublicRoutes';
+
+import Header from './layout/Header';
+import Footer from './layout/Footer';
+
+import Box from '@material-ui/core';
 
 import GTHaptikMediumWoff2 from './assets/fonts/GT-Haptik-Medium-2.woff2';
 import "@fontsource/arimo";
@@ -73,7 +77,33 @@ const theme = createMuiTheme({
   },
 });
 
+const useStyles = makeStyles((theme) => ({
+  public: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  header: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  main: {
+    display: 'flex',
+    flexGrow: 1,
+    justifyContent: 'center',
+    fontSize: 'calc(10px + 2vmin)',
+    paddingTop: theme.spacing(4),
+  },
+  footer: {
+    display: 'flex',
+    textAlign: 'center',
+    position: 'relative',
+    bottom: '0',
+  },
+}));
+
 const App: FC = () => {
+  const classes = useStyles();
+
   return (
     <ThemeProvider theme={theme}>
       <Router>

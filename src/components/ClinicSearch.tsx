@@ -1,11 +1,12 @@
 import React, { useContext, useState, useEffect, useRef, FC } from 'react'
 
-import { Grid, TextField } from '@material-ui/core'
+import { Container, Grid, Divider, TextField } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
 
 //import ClinicList from './ClinicList';
 import SearchPanel from './SearchPanel';
 import ClinicCard from './ClinicCard';
+import Hero from './Hero';
 
 //import { Clinic } from '../api/clinic_api';
 
@@ -25,7 +26,7 @@ const ClinicSearch: FC = () => {
     {/* Note: the empty deps array [] means this useEffect will run once similar to componentDidMount() */ }
 
     useEffect(() => {
-        fetch('https://npin.cdc.gov/api/organization/proximity?prox[origin]=' + zip)
+        fetch('https://npin.cdc.gov/api/organization/proximity?prox[origin]=' + zip, { mode: 'no-cors' } )
             .then(res => res.json())
             .then(
                 (result) => {
@@ -43,6 +44,9 @@ const ClinicSearch: FC = () => {
     }, [])
 
     return (
+        <Container maxWidth="md">
+          <Hero />
+          <Divider />
         <SearchPanel title="Find a Clinic">
             <Grid>
                 <form>
@@ -63,6 +67,7 @@ const ClinicSearch: FC = () => {
                     </Button>
                 </form>
             </Grid>
+            {/*
             <Grid
                 container
                 spacing={2}
@@ -73,7 +78,7 @@ const ClinicSearch: FC = () => {
 
             {
                 error ? (
-                    <div>Error: {/*{error.message}*/}</div>
+                    <div>Error: {error.message}</div>
                 ) :
                 <ul>
                     {items.map(item => (
@@ -84,8 +89,10 @@ const ClinicSearch: FC = () => {
                 </ul>
             }
             </Grid>
+        */}
             {/* <ClinicList zip={searchTermEl.current} /> */}
         </SearchPanel>
+        </Container>
     );
 };
 
