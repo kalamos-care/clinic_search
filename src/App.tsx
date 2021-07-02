@@ -6,6 +6,7 @@ import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import { PublicRoutes } from './PublicRoutes';
+import ScrollToTop from './ScrollToTop';
 
 import GTHaptikMediumWoff2 from './assets/fonts/GT-Haptik-Medium-2.woff2';
 import "@fontsource/arimo";
@@ -83,6 +84,7 @@ const App: FC = () => {
     <ThemeProvider theme={theme}>
       <Router>
         <CssBaseline />
+        <ScrollToTop />
         <PublicRoutes />
       </Router>
     </ThemeProvider>

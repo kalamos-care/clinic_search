@@ -2,8 +2,6 @@ import React, { FC } from 'react'
 
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
   Link as RouterLink,
   LinkProps as RouterLinkProps,
 } from 'react-router-dom';

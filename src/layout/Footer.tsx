@@ -78,7 +78,7 @@ const footers = [
       },
       {
         description: 'API Docs',
-        url: '/resources/api',
+        url: '/resources/api-docs',
       },
     ],
   },

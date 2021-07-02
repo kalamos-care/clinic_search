@@ -4,12 +4,18 @@ import { useHistory } from 'react-router';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import { Box } from '@material-ui/core';
+import { Box, Container } from '@material-ui/core';
 
 import Header from './layout/Header';
 import Footer from './layout/Footer';
 
 import { Home } from './pages/Home';
+import { About } from './pages/About';
+import { Blog } from './pages/Blog';
+import { FAQ } from './pages/FAQ';
+import { Docs } from './pages/Docs';
+import { Privacy } from './pages/Privacy';
+import { TermsOfUse } from './pages/TermsOfUse';
 import { Clinic } from './pages/Clinic';
 
 const useStyles = makeStyles((theme) => ({
@@ -48,16 +54,22 @@ export const PublicRoutes: FC = () => {
         <Header />
       </header>
       <main className={classes.main}>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/clinic/:id" component={Clinic} />
-        </Switch>
+        <Container maxWidth="md">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/company/about-us" component={About} />
+            <Route path="/company/blog" component={Blog} />
+            <Route path="/resources/faq" component={FAQ} />
+            <Route path="/resources/api-docs" component={Docs} />
+            <Route path='/legal/privacy-policy' component={Privacy} />
+            <Route path='/legal/terms-of-use' component={TermsOfUse} />
+            <Route path="/clinic/:id" component={Clinic} />
+          </Switch>
+        </Container>
       </main>
       <footer className={classes.footer}>
         <Footer />
       </footer>
     </Box>
-
-
   );
 };
