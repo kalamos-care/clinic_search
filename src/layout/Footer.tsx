@@ -26,25 +26,20 @@ const useStyles = makeStyles((theme) => ({
       listStyle: 'none',
     },
   },
-  footerArea: {
-    margin: theme.spacing(4, 0, 2),
-    padding: theme.spacing(4, 0, 4),
-    [theme.breakpoints.up('sm')]: {
-      padding: theme.spacing(6, 0, 6),
-    },
-  },
-  copyright: {
-    alignItems: 'center',
-    width: '100%',
-  },
   divider: {
     margin: theme.spacing(4),
   },
 }));
 
-const social = [
-  { name: 'GitHub', icon: <GitHubIcon /> },
-  { name: 'Twitter', icon: <TwitterIcon /> },
+const socials = [
+  {
+    name: 'GitHub',
+    icon: <GitHubIcon />
+  },
+  {
+    name: 'Twitter',
+    icon: <TwitterIcon />
+  },
 ];
 
 function Copyright() {
@@ -74,19 +69,6 @@ const footers = [
       },
     ],
   },
-/*   {
-    title: 'Product',
-    subheaders: [
-      {
-        description: 'Features',
-        url: '/product/features',
-      },
-      {
-        description: 'Pricing',
-        url: '/product/pricing',
-      },
-    ],
-  }, */
   {
     title: 'Resources',
     subheaders: [
@@ -115,18 +97,12 @@ const footers = [
   },
 ];
 
-
 const Footer: FC = () => {
   const classes = useStyles();
 
   return (
     <Container>
       <Divider className={classes.divider} />
-      <Grid container spacing={4} justify="space-evenly">
-      <Typography variant="subtitle1" color="textPrimary" gutterBottom>
-            This code for this website is available for free on GitHub
-        </Typography>
-        </Grid>
       <Grid container spacing={4} justify="space-evenly">
         {footers.map((footer) => (
           <Grid item xs={6} sm={3} key={footer.title}>
@@ -150,14 +126,18 @@ const Footer: FC = () => {
           </Grid>
         ))}
         <Grid item xs={12}>
-          {/* This is broken
-                <ul>
-                    {social.icon.map((item) => (
-                        {item.icon}
-                    )
-                    )}
-                </ul>
-                */}
+          {/*
+          <ul>
+            {
+              socials.map((social) => (
+                { social.icon }
+              )
+            )}
+          </ul>
+           */}
+          <Typography variant="body1" color="textPrimary" gutterBottom>
+            The code for this website is available for free on GitHub
+          </Typography>
           <Copyright />
         </Grid>
       </Grid>

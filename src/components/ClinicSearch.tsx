@@ -1,12 +1,12 @@
 import React, { useContext, useState, useEffect, useRef, FC } from 'react'
 
-import { Container, Grid, Divider, TextField } from '@material-ui/core'
+
+import { Grid, TextField } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
 
 //import ClinicList from './ClinicList';
 import SearchPanel from './SearchPanel';
-import ClinicCard from './ClinicCard';
-import Hero from './Hero';
+import ClinicList from './ClinicList';
 
 //import { Clinic } from '../api/clinic_api';
 
@@ -26,7 +26,7 @@ const ClinicSearch: FC = () => {
     {/* Note: the empty deps array [] means this useEffect will run once similar to componentDidMount() */ }
 
     useEffect(() => {
-        fetch('https://npin.cdc.gov/api/organization/proximity?prox[origin]=' + zip, { mode: 'no-cors' } )
+        fetch('https://npin.cdc.gov/api/organization/proximity?prox[origin]=' + zip, { mode: 'no-cors' })
             .then(res => res.json())
             .then(
                 (result) => {
@@ -44,92 +44,49 @@ const ClinicSearch: FC = () => {
     }, [])
 
     return (
-        <Container maxWidth="md">
-          <Hero />
-          <Divider />
-        <SearchPanel title="Find a Clinic">
-            <Grid>
-                <form>
-                    <TextField
-                        id="searchTerm"
-                        type="text"
-                        inputRef={searchTermEl}
-                        placeholder="Enter Location"
-                    />
-                    <Button
-                        variant="text"
-                        color="default"
-                        type="button"
-                        onClick={() => searchTermEl.current
-                        }
-                    >
-                        Submit
-                    </Button>
-                </form>
-            </Grid>
-            {/*
-            <Grid
-                container
-                spacing={2}
-                direction="column"
-                justify="flex-start"
-                alignItems="stretch"
-            >
-
-            {
-                error ? (
-                    <div>Error: {error.message}</div>
-                ) :
-                <ul>
-                    {items.map(item => (
-                        <li>
-                            {item}
-                        </li>
-                    ))}
-                </ul>
-            }
-            </Grid>
-        */}
-            {/* <ClinicList zip={searchTermEl.current} /> */}
-        </SearchPanel>
-        </Container>
+        <Grid container>
+            <SearchPanel title="Find a Clinic">
+                <Grid item xs={12}>
+                    <form>
+                        <TextField
+                            id="searchTerm"
+                            type="text"
+                            inputRef={searchTermEl}
+                            placeholder="Enter Location"
+                        />
+                        <Button
+                            variant="text"
+                            color="default"
+                            type="button"
+                            onClick={() => searchTermEl.current
+                            }
+                        >
+                            Submit
+                        </Button>
+                    </form>
+                </Grid>
+                <ClinicList zip={searchTermEl.current} />
+            </SearchPanel>
+        </Grid>
     );
 };
 
 export default ClinicSearch;
 
-            {/*if (error) {
-                <div>Error: {error?.message}</div>
-            } 
-            else if (!isLoaded) {
-                <div>Loading...</div>
-            }
-            else {
-                <ul>
-                    {items.map(item => (
-                        <li key={item.id}>
-                            {item.name}
-                        </li>
-                    ))}
-                </ul>
-            }
-            */}
-
-
-            {/*{
-                    clinics.length ? clinics.map((clinic: any) =>
-                        <Grid
-                            item
-                            key={clinic.field_org_id}
-                        >
-                            <ClinicCard
-                                title={clinic.title_field}
-                                subtitle={[
-                                    `${clinic.field_org_street1} ${clinic.field_org_street2} ${clinic.field_org_city_name}, ${clinic.field_org_state} ${clinic.field_org_zipcode}`,
-                                    clinic.field_org_phone,
-                                ]}
-                                action="Select"
-                            />
-                        </Grid>
-                    ) : <Grid item>{loading ? 'Loading' : 'No Results'}</Grid>
-                }*/}
+{/*
+    if (error) {
+        <div>Error: {error?.message}</div>
+    } 
+    else if (!isLoaded) {
+        <div>Loading...</div>
+    }
+    else {
+        <ul>
+            {items.map(item => (
+                <li key={item.id}>
+                    {item.name}
+                </li>
+            ))}
+        </ul>
+    }
+*/}

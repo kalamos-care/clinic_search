@@ -1,4 +1,13 @@
 import React, { FC } from 'react'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link as RouterLink,
+  LinkProps as RouterLinkProps,
+} from 'react-router-dom';
+
 import {
   Card,
   CardActions,
@@ -8,12 +17,12 @@ import {
 } from '@material-ui/core';
 
 interface Props {
-  action: string,
+  clinic_id: string,
   subtitle: string[],
   title: string,
 };
 
-const ClinicCard: FC<Props> = ({ title, subtitle, action }) => (
+const ClinicCard: FC<Props> = ({ title, subtitle, clinic_id }) => (
   <Card>
     <CardContent>
       <Typography gutterBottom variant="h5" component="h3">
@@ -28,7 +37,11 @@ const ClinicCard: FC<Props> = ({ title, subtitle, action }) => (
       }
     </CardContent>
     <CardActions>
-      <Button size="small" variant="contained">{action}</Button>
+      <RouterLink to={`/clinic/${clinic_id}`}>
+        <Button size="small" variant="contained">
+          Select
+        </Button>
+      </RouterLink>
     </CardActions>
   </Card>
 );

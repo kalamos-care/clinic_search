@@ -4,35 +4,11 @@ import { useParams } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import { Box } from '@material-ui/core/';
+import { Container, Box, Grid } from '@material-ui/core/';
 
-import Header from '../layout/Header';
-import Footer from '../layout/Footer';
 
 const useStyles = makeStyles((theme) => ({
-    public: {
-        display: 'flex',
-        flexDirection: 'column',
-    },
-    header: {
-        display: 'flex',
-        alignItems: 'center',
-    },
-    main: {
-        display: 'flex',
-        flexGrow: 1,
-        justifyContent: 'center',
-        fontSize: 'calc(10px + 2vmin)',
-        paddingTop: theme.spacing(4),
-    },
-    footer: {
-        display: 'flex',
-        textAlign: 'center',
-        position: 'absolute',
-        width: '100%',
-        bottom: '0',
-        backgroundColor: '#f4effc',
-    },
+
 }));
 
 interface RouteParams {
@@ -45,17 +21,11 @@ export const Clinic: FC = () => {
     const params = useParams<RouteParams>();
 
     return (
-        <Box className={classes.public}>
-            <header className={classes.header}>
-                <Header />
-            </header>
-            <main className={classes.main}>
+        <Container maxWidth="md">
+            <Grid>
                 <p>This is clinic {params.id}</p>
-            </main>
-            <footer className={classes.footer}>
-                <Footer />
-            </footer>
-        </Box>
+            </Grid>
+        </Container>
     );
 };
 

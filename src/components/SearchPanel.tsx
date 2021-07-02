@@ -53,9 +53,9 @@ interface Props {
 const SearchPanel: FC<Props> = ({ title, children }) => (
     <Grid container>
         <Grid item xs={12}>
-        <Typography variant="h4" component="h2">
-            {title}
-        </Typography>
+            <Typography variant="h4" component="h2">
+                {title}
+            </Typography>
         </Grid>
         <Grid item xs={12}>
             {children}
