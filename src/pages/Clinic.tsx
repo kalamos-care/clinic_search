@@ -7,17 +7,13 @@ import { Grid } from '@material-ui/core/';
 
 import PageTitle from '../components/PageTitle';
 
+import { ClinicAPI } from '../api/clinic_api';
+
 
 const useStyles = makeStyles((theme) => ({
 
 }));
 
-const instance = axios.create({
-    baseURL: 'https://underwater.hack.fail/v1',
-    timeout: 15000,
-});
-
-const responseBody = (response: AxiosResponse) => response.data;
 interface RouteParams {
     id: string
 }
@@ -27,14 +23,14 @@ export const Clinic: FC = () => {
 
     const param = useParams<RouteParams>();
 
-    const getClinicData = instance.get(`/test-centers/${param.id}`).then(responseBody);
-    console.log(getClinicData);
+    const ClinicData = ClinicAPI.getAClinic(param.id);
+    console.log(ClinicData);
 
     return (
         <Grid container>
             <PageTitle title={`This is clinic ${param.id}`} />
             <Grid item xs={12}>
-                <pre>{JSON.stringify(getClinicData, null, 2)}</pre>
+                <pre>{JSON.stringify(ClinicData, null, 2)}</pre>
             </Grid>
         </Grid>
     );

@@ -1,12 +1,10 @@
 import axios, { AxiosResponse } from 'axios';
-import { ClinicType } from '../models/clinic.interface';
+//import { ClinicType } from '../models/clinic.interface';
 
 const instance = axios.create({
-	baseURL: 'https://kalamos.care',
-	timeout: 15000,
+    baseURL: 'https://underwater.hack.fail/v1',
+    timeout: 15000,
 });
-
-const cdcHeaders = { headers: { "Access-Control-Allow-Origin": true } }
 
 const responseBody = (response: AxiosResponse) => response.data;
 
@@ -17,10 +15,10 @@ const requests = {
 	//delete: (url: string) => instance.delete(url).then(responseBody),
 };
 
-export const Clinic = {
-	getClinicsByZip: (zip: string): Promise<ClinicType[]> => requests.get('https://npin.cdc.gov/api/organization/proximity?prox[origin]=' + zip),
-	
-	//getAClinic: (id: number): Promise<ClinicType> => requests.get(`posts/${id}`),
+export const ClinicAPI = {
+	//getClinicsByZip: (zip: string): Promise<ClinicType[]> => requests.get('https://npin.cdc.gov/api/organization/proximity?prox[origin]=' + zip),
+	getClinicsByZip: (zip: string) => requests.get(`/search?zip=${zip}`),
+	getAClinic: (id: string) => requests.get(`/test-centers/${id}`),
 	//createPost: (post: PostType): Promise<PostType> =>
 	//	requests.post('posts', post),
 	//updatePost: (post: PostType, id: number): Promise<PostType> =>
