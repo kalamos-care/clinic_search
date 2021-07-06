@@ -51,8 +51,8 @@ export default ClinicList;
 
 const clinics = [
     {
-        "field_org_nid": "299598",
-        "field_org_id": "6012",
+        "field_org_nid": "8437900c-b490-458d-b5d4-ee0a35c9f61b",
+        "field_org_id": "8437900c-b490-458d-b5d4-ee0a35c9f61b",
         "title_field": "Planned Parenthood of Greater New York",
         "field_organization_name_2": "Ithaca Health Center",
         "field_organization_name_3": "",
