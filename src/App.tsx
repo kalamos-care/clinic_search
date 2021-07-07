@@ -79,15 +79,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const App: FC = () => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
     <ThemeProvider theme={theme}>
-      <Router basename={'/'}>
+      <HashRouter basename={'/'}>
         <CssBaseline />
         <ScrollToTop />
         <PublicRoutes />
-      </Router>
+      </HashRouter>
     </ThemeProvider>
   );
 }
