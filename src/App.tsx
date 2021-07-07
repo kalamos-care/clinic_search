@@ -82,7 +82,7 @@ const App: FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Router>
+      <Router basename={public.env.PUBLIC_URL}>
         <CssBaseline />
         <ScrollToTop />
         <PublicRoutes />
