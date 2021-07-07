@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import { ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
@@ -82,7 +83,7 @@ const App: FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Router basename={public.env.PUBLIC_URL}>
+      <Router basename={'/'}>
         <CssBaseline />
         <ScrollToTop />
         <PublicRoutes />
