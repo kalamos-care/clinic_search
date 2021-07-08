@@ -1,8 +1,8 @@
-import React, { FC } from 'react'
-
-import axios from 'axios';
+import React, { FC, useEffect } from 'react'
 
 import { Grid } from '@material-ui/core'
+
+import { ClinicAPI } from '../api/clinic_api';
 
 import ClinicCard from './ClinicCard';
 
@@ -17,8 +17,15 @@ interface Props {
 
 const ClinicList: FC<Props> = ({ zip }) => {
     //const loading = false;
-    //const clinicSearchUrl: string = 'https://npin.cdc.gov/api/organization/proximity?prox[origin]=' + zip;
-    //const clinics: any = axios.get(clinicSearchUrl, { headers: { "Access-Control-Allow-Origin": true } });
+
+    const [ClinicListData, setClinicListData] = React.useState();
+    useEffect(() => {
+        ClinicAPI
+          .getClinicsByZip(zip)
+          .then(data => setClinicListData(data))
+    }, []);
+
+    console.log(ClinicListData);
 
     return (
         <Grid
@@ -28,6 +35,7 @@ const ClinicList: FC<Props> = ({ zip }) => {
             justify="flex-start"
             alignItems="stretch"
         >
+            <pre>{JSON.stringify(ClinicListData, null, 2)}</pre>
             {clinics.map((clinic: any) =>
                     <Grid
                         item

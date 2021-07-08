@@ -7,6 +7,7 @@ import { Grid } from '@material-ui/core/';
 
 import PageTitle from '../components/PageTitle';
 
+import { ClinicType } from '../models/clinic.interface';
 import { ClinicAPI } from '../api/clinic_api';
 
 
@@ -19,11 +20,10 @@ interface RouteParams {
 }
 
 export const Clinic: FC = () => {
-    const classes = useStyles();
+    //const classes = useStyles();
 
     const param = useParams<RouteParams>();
 
-    //const ClinicData = ClinicAPI.getAClinic(param.id);
 
     const [ClinicData, setClinicData] = React.useState();
     useEffect(() => {
@@ -32,12 +32,12 @@ export const Clinic: FC = () => {
           .then(data => setClinicData(data))
     }, []);
 
-    console.log(ClinicData);
-
+    //console.log(ClinicData);
 
     return (
         <Grid container>
             <PageTitle title={`This is clinic ${param.id}`} />
+            {/*<p>{ClinicData.data.name1}</p>*/}
             <Grid item xs={12}>
                 <pre>{JSON.stringify(ClinicData, null, 2)}</pre>
             </Grid>
