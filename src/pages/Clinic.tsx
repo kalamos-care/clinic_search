@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import axios, { AxiosResponse } from 'axios';
@@ -23,8 +23,17 @@ export const Clinic: FC = () => {
 
     const param = useParams<RouteParams>();
 
-    const ClinicData = ClinicAPI.getAClinic(param.id);
+    //const ClinicData = ClinicAPI.getAClinic(param.id);
+
+    const [ClinicData, setClinicData] = React.useState();
+    useEffect(() => {
+        ClinicAPI
+          .getAClinic(param.id)
+          .then(data => setClinicData(data))
+    }, []);
+
     console.log(ClinicData);
+
 
     return (
         <Grid container>
