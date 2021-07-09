@@ -1,5 +1,4 @@
-import React, { useContext, useState, useEffect, useRef, FC } from 'react'
-
+import {  useRef, FC } from 'react'
 
 import { Grid, TextField } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
@@ -48,7 +47,7 @@ const ClinicSearch: FC = () => {
 
 export default ClinicSearch;
 
-{/*
+/*
     if (error) {
         <div>Error: {error?.message}</div>
     } 
@@ -64,4 +63,4 @@ export default ClinicSearch;
             ))}
         </ul>
     }
-*/}
+*/

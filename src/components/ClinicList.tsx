@@ -1,18 +1,16 @@
 import React, { FC, useEffect } from 'react'
-
 import {
-    BrowserRouter as Router,
     Link as RouterLink,
-    LinkProps as RouterLinkProps,
 } from 'react-router-dom';
 
 import { Grid, List, ListItem, Divider, ListItemText, Typography, Link } from '@material-ui/core'
 
 import { ClinicAPI } from '../api/clinic_api';
 import { ClinicType } from '../models/clinic.interface';
+//import { ClinicListType } from '../models/clinicList.interface';
 import { fakeClinicData } from '../models/fakecliniclistdata';
 
-import ClinicCard from './ClinicCard';
+//import ClinicCard from './ClinicCard';
 
 interface Props {
     zip: string,

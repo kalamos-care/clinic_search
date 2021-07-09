@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 /* import {
   Switch,
@@ -8,19 +8,19 @@ import React, { FC } from 'react';
   Redirect,
 } from 'react-router-dom'; */
 
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 
 import { Container, Divider } from '@material-ui/core/';
 
 import Hero from '../components/Hero';
 import ClinicSearch from '../components/ClinicSearch';
 
-const useStyles = makeStyles((theme) => ({
+// const useStyles = makeStyles((theme) => ({
 
-}));
+// }));
 
 export const Home: FC = () => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
     <Container maxWidth="md">

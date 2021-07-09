@@ -1,22 +1,17 @@
-import React, { FC, useState } from 'react';
+import { FC } from 'react';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link as RouterLink,
-  LinkProps as RouterLinkProps,
 } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
-import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Divider from '@material-ui/core/Divider';
 
-import GitHubIcon from '@material-ui/icons/GitHub';
-import TwitterIcon from '@material-ui/icons/Twitter';
+// import GitHubIcon from '@material-ui/icons/GitHub';
+// import TwitterIcon from '@material-ui/icons/Twitter';
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -31,16 +26,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const socials = [
-  {
-    name: 'GitHub',
-    icon: <GitHubIcon />
-  },
-  {
-    name: 'Twitter',
-    icon: <TwitterIcon />
-  },
-];
+// const socials = [
+//   {
+//     name: 'GitHub',
+//     icon: <GitHubIcon />
+//   },
+//   {
+//     name: 'Twitter',
+//     icon: <TwitterIcon />
+//   },
+// ];
 
 function Copyright() {
   return (
