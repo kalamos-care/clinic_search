@@ -1,11 +1,11 @@
 import React, { FC, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import axios, { AxiosResponse } from 'axios';
 
 import { Grid } from '@material-ui/core/';
 
 import PageTitle from '../components/PageTitle';
+import ClinicCard from '../components/ClinicCard';
 
 import { ClinicType } from '../models/clinic.interface';
 import { ClinicAPI } from '../api/clinic_api';
@@ -24,20 +24,18 @@ export const Clinic: FC = () => {
 
     const param = useParams<RouteParams>();
 
-
-    const [ClinicData, setClinicData] = React.useState();
+    const [ClinicData, setClinicData] = React.useState<ClinicType>();
     useEffect(() => {
         ClinicAPI
-          .getAClinic(param.id)
-          .then(data => setClinicData(data))
+            .getAClinic(param.id)
+            .then(data => setClinicData(data))
     }, []);
 
     //console.log(ClinicData);
 
     return (
         <Grid container>
-            <PageTitle title={`This is clinic ${param.id}`} />
-            {/*<p>{ClinicData.data.name1}</p>*/}
+            <PageTitle title={`Clinic: ${ClinicData?.data.name1}`} />
             <Grid item xs={12}>
                 <pre>{JSON.stringify(ClinicData, null, 2)}</pre>
             </Grid>
