@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.js": "/static/js/main.29b2db26.chunk.js",
-    "main.js.map": "/static/js/main.29b2db26.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.c54dff33.js",
-    "runtime-main.js.map": "/static/js/runtime-main.c54dff33.js.map",
+    "main.js": "/static/js/main.643d759d.chunk.js",
+    "main.js.map": "/static/js/main.643d759d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a387f41f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a387f41f.js.map",
     "static/css/2.32632296.chunk.css": "/static/css/2.32632296.chunk.css",
-    "static/js/2.6902c108.chunk.js": "/static/js/2.6902c108.chunk.js",
-    "static/js/2.6902c108.chunk.js.map": "/static/js/2.6902c108.chunk.js.map",
-    "static/js/3.3eb75763.chunk.js": "/static/js/3.3eb75763.chunk.js",
-    "static/js/3.3eb75763.chunk.js.map": "/static/js/3.3eb75763.chunk.js.map",
+    "static/js/2.f1330baf.chunk.js": "/static/js/2.f1330baf.chunk.js",
+    "static/js/2.f1330baf.chunk.js.map": "/static/js/2.f1330baf.chunk.js.map",
+    "static/js/3.f2a1485c.chunk.js": "/static/js/3.f2a1485c.chunk.js",
+    "static/js/3.f2a1485c.chunk.js.map": "/static/js/3.f2a1485c.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.32632296.chunk.css.map": "/static/css/2.32632296.chunk.css.map",
-    "static/js/2.6902c108.chunk.js.LICENSE.txt": "/static/js/2.6902c108.chunk.js.LICENSE.txt",
+    "static/js/2.f1330baf.chunk.js.LICENSE.txt": "/static/js/2.f1330baf.chunk.js.LICENSE.txt",
     "static/media/GT-Haptik-Medium-2.c5fc3759.woff2": "/static/media/GT-Haptik-Medium-2.c5fc3759.woff2",
     "static/media/index.css": "/static/media/arimo-vietnamese-400-normal.c0af09a9.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.c54dff33.js",
+    "static/js/runtime-main.a387f41f.js",
     "static/css/2.32632296.chunk.css",
-    "static/js/2.6902c108.chunk.js",
-    "static/js/main.29b2db26.chunk.js"
+    "static/js/2.f1330baf.chunk.js",
+    "static/js/main.643d759d.chunk.js"
   ]
 }
