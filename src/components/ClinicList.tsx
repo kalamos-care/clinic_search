@@ -6,9 +6,9 @@ import {
 import { Grid, List, ListItem, Divider, ListItemText, Typography, Link } from '@material-ui/core'
 
 import { ClinicAPI } from '../api/clinic_api';
-import { ClinicType } from '../models/clinic.interface';
-//import { ClinicListType } from '../models/clinicList.interface';
-import { fakeClinicData } from '../models/fakecliniclistdata';
+//import { ClinicType } from '../models/clinic.interface';
+import { ClinicListType } from '../models/clinicList.interface';
+//import { fakeClinicData } from '../models/fakecliniclistdata';
 
 //import ClinicCard from './ClinicCard';
 
@@ -16,17 +16,17 @@ interface Props {
     zip: string,
 };
 
-// ClinicList should receive JSON that resembles the Clinic.interface Model and format that into a list of cards to be returned
+// ClinicList should receive JSON that resembles the ClinicList.interface Model and format that into a list of cards to be returned
 // Replace ClinicCard with ListItems
 
 const ClinicList: FC<Props> = ({ zip }) => {
     //const loading = false;
 
-    type ClinicListObj = {
-        field1: ClinicType;
-        field2: ClinicType;
-    };
-    const [ClinicListData, setClinicListData] = React.useState<ClinicListObj>();
+    // type ClinicListObj = {
+    //     field1: ClinicType;
+    //     field2: ClinicType;
+    // };
+    const [ClinicListData, setClinicListData] = React.useState<ClinicListType>();
     useEffect(() => {
         ClinicAPI
             .getClinicsByZip(zip)
@@ -44,8 +44,10 @@ const ClinicList: FC<Props> = ({ zip }) => {
             alignItems="stretch"
         >
             <pre>{JSON.stringify(ClinicListData, null, 2)}</pre>
+            <pre>{zip}</pre>
+
             <List className="">
-                {fakeClinicData.map((clinic: any) =>
+                {ClinicListData?.data.map((clinic: any) =>
                     <ListItem alignItems="flex-start" key={clinic.field_org_id}>
                         <Link component={RouterLink} to={`/clinic/${clinic.field_org_id}`}>
                             <ListItemText
