@@ -26,6 +26,12 @@ const ClinicList: FC<Props> = ({ zip }) => {
     //     field1: ClinicType;
     //     field2: ClinicType;
     // };
+    
+    const RandomClinics = ClinicAPI.getRandomClinics();
+    const btHomeClinics = ClinicAPI.getClinicsByZip("11211");
+    console.log(RandomClinics);
+    console.log(btHomeClinics);
+
     const [ClinicListData, setClinicListData] = React.useState<ClinicListType>();
     useEffect(() => {
         ClinicAPI
@@ -33,7 +39,7 @@ const ClinicList: FC<Props> = ({ zip }) => {
             .then(data => setClinicListData(data))
     }, []);
 
-    console.log(ClinicListData);
+    console.log(ClinicListData); 
 
     return (
         <Grid
@@ -43,8 +49,7 @@ const ClinicList: FC<Props> = ({ zip }) => {
             justify="flex-start"
             alignItems="stretch"
         >
-            <pre>{JSON.stringify(ClinicListData, null, 2)}</pre>
-            <pre>{zip}</pre>
+            <pre>{JSON.stringify(RandomClinics, null, 2)}</pre>   
 
             <List className="">
                 {ClinicListData?.data.map((clinic: any) =>
