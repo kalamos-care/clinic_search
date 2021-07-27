@@ -9,11 +9,12 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(4, 0),
     },
     heroContent: {
-        padding: theme.spacing(4),
+        padding: theme.spacing(4, 0),
     },
     card: {
         padding: 4,
-        margin: 8,
+        margin: "auto",
+        maxWidth: "360px",
     },
     bullet: {
         display: 'inline-block',
@@ -33,8 +34,8 @@ export const Hero: FC = () => {
     const bull = <span className={classes.bullet}>•</span>;
 
     return (
-        <Container maxWidth="sm">
-            <Grid container spacing={2} justify="center" className={classes.hero}>
+        <Container maxWidth="md">
+            <Grid container justify="center" className={classes.hero}>
                 <Grid item xs={12} className={classes.heroContent}>
                     <Typography variant="h3" align="center" gutterBottom>PrEP is lifesaving-<br />but what is PrEP?</Typography>
                     <Typography variant="h6" gutterBottom>Often times, we think of PrEP as a pill, and it is!</Typography>
@@ -57,16 +58,16 @@ export const Hero: FC = () => {
                         </CardContent>
                     </Card>
                     <Typography variant="subtitle1" gutterBottom>
-                        Does Truvada prevent HIV? <a href="">Absolutely</a>.
+                        Does Truvada prevent HIV? <a href="https://www.cdc.gov/hiv/basics/prep.html">Absolutely</a>.
                     </Typography>
                     <Typography variant="subtitle1" gutterBottom>
-                        Does doxycycline prevent syphilis? <a href="">Results are promising</a>.
+                        Does doxycycline prevent syphilis? <a href="http://www.aidsmap.com/news/feb-2017/experimental-sti-prophylaxis-prep-users-produces-big-drops-syphilis-and-chlamydia">Results are promising</a>.
                     </Typography>
                     <Typography variant="subtitle1" gutterBottom>
-                        Do condoms prevent STIs? <a href="">Yup</a>.
+                        Do condoms prevent STIs? <a href="https://www.cdc.gov/condomeffectiveness/brief.html">Yup</a>.
                     </Typography>
                     <Typography variant="subtitle1" gutterBottom>
-                        You know what else reduces STIs – <a href="">talking about sexual health</a>.
+                        You know what else reduces STIs – <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5763398/">talking about sexual health</a>.
                     </Typography>
                     <Typography variant="body1" gutterBottom>
                         Taken at its most literal definition, pre-exposure prophylaxis is simply any preventative action taken before potentially being exposed to a pathogen. For the sake of this diatribe, I’ll keep PrEP discussions focused on sex, because hand sanitizer doesn’t really help alleviate sexual shame.
@@ -80,7 +81,7 @@ export const Hero: FC = () => {
                     <Card className={classes.card}>
                         <CardContent>
                             <Typography className={classes.title} variant="h5" component="h2">
-                                What do I say when asked if I'm on PrEP
+                                What do I say when asked if I'm on PrEP?
                             </Typography>
                             <Typography variant="body2" component="p">
                                 I say that I take PrEP medication on-demand, get screened quarterly, and share the number of partners I’ve had recently.<br />I’m confident and PrEPared to love.

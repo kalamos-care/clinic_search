@@ -22,12 +22,7 @@ interface Props {
 const ClinicList: FC<Props> = ({ zip }) => {
     //const loading = false;
 
-    // type ClinicListObj = {
-    //     field1: ClinicType;
-    //     field2: ClinicType;
-    // };
-    
-    const RandomClinics = ClinicAPI.getRandomClinics();
+    const RandomClinics: any = ClinicAPI.getRandomClinics();
     const btHomeClinics = ClinicAPI.getClinicsByZip("11211");
     console.log(RandomClinics);
     console.log(btHomeClinics);
@@ -39,7 +34,7 @@ const ClinicList: FC<Props> = ({ zip }) => {
             .then(data => setClinicListData(data))
     }, []);
 
-    console.log(ClinicListData); 
+    console.log(ClinicListData);
 
     return (
         <Grid
@@ -49,8 +44,22 @@ const ClinicList: FC<Props> = ({ zip }) => {
             justify="flex-start"
             alignItems="stretch"
         >
-            <pre>{JSON.stringify(RandomClinics, null, 2)}</pre>   
+            {
+                RandomClinics ?
+                    <pre>
+                        {/*RandomClinics.map(({id, name}: any) => <p key={id}>{name}</p>)*/}
+                        <p>There's random clinic data and you don't know how to access it</p>
+                    </pre>
+                    :
+                    <p>No data yet</p>
+            }
+        </Grid>
+    );
+};
 
+export default ClinicList;
+
+/*
             <List className="">
                 {ClinicListData?.data.map((clinic: any) =>
                     <ListItem alignItems="flex-start" key={clinic.field_org_id}>
@@ -79,8 +88,4 @@ const ClinicList: FC<Props> = ({ zip }) => {
                     </ListItem>
                 )}
             </List>
-        </Grid>
-    );
-};
-
-export default ClinicList;
+            */
