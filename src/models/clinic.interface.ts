@@ -22,16 +22,16 @@ export interface ClinicType {
       "longitude": number,
       "country": string
     },
-    "phone_numbers": [],
+    "phone_numbers": string[],
     "services": {
-      "care": [],
-      "prevention": [],
-      "support": [],
-      "testing": []
+      "care": string[],
+      "prevention": string[],
+      "support": string[],
+      "testing": string[]
     },
-    "websites": [],
-    "audience": [],
-    "languages": [],
-    "type": []
+    "websites": string[],
+    "audience": string[],
+    "languages": string[],
+    "type": string[]
   }
 };

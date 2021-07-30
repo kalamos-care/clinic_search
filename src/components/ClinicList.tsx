@@ -1,13 +1,12 @@
 import React, { FC, useEffect } from 'react'
-import {
-    Link as RouterLink,
-} from 'react-router-dom';
+// import {
+//     Link as RouterLink,
+// } from 'react-router-dom';
 
 import { Grid, List, ListItem, Divider, ListItemText, Typography, Link } from '@material-ui/core'
 
 import { ClinicAPI } from '../api/clinic_api';
-//import { ClinicType } from '../models/clinic.interface';
-import { ClinicListType } from '../models/clinicList.interface';
+import { ClinicType } from '../models/clinic.interface';
 //import { fakeClinicData } from '../models/fakecliniclistdata';
 
 //import ClinicCard from './ClinicCard';
@@ -22,12 +21,12 @@ interface Props {
 const ClinicList: FC<Props> = ({ zip }) => {
     //const loading = false;
 
-    const RandomClinics: any = ClinicAPI.getRandomClinics();
+    const RandomClinics = ClinicAPI.getRandomClinics();
     const btHomeClinics = ClinicAPI.getClinicsByZip("11211");
     console.log(RandomClinics);
     console.log(btHomeClinics);
 
-    const [ClinicListData, setClinicListData] = React.useState<ClinicListType>();
+    const [ClinicListData, setClinicListData] = React.useState<ClinicType[]>();
     useEffect(() => {
         ClinicAPI
             .getClinicsByZip(zip)
@@ -45,7 +44,7 @@ const ClinicList: FC<Props> = ({ zip }) => {
             alignItems="stretch"
         >
             {
-                RandomClinics ?
+                ClinicListData ?
                     <pre>
                         {/*RandomClinics.map(({id, name}: any) => <p key={id}>{name}</p>)*/}
                         <p>There's random clinic data and you don't know how to access it</p>

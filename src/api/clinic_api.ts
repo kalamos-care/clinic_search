@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
+//import { request } from 'http';
 //import { ClinicType } from '../models/clinic.interface';
 
 const instance = axios.create({

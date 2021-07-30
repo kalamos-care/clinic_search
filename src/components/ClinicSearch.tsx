@@ -8,7 +8,6 @@ import { Button, TextField, Grid, Typography } from '@material-ui/core'
 import ClinicList from './ClinicList';
 import { ClinicAPI } from '../api/clinic_api';
 //import { ClinicType } from '../models/clinic.interface';
-import { ClinicListType } from '../models/clinicList.interface';
 
 //import { ClinicAPI } from '../api/clinic_api';
 
