@@ -1,9 +1,11 @@
-import React, { FC, useEffect, useRef } from 'react';
+import React, { FC, useContext, useEffect, useRef } from 'react';
 
-// import {
-//   Link as RouterLink,
-//   LinkProps as RouterLinkProps,
-// } from 'react-router-dom';
+/*
+import {
+  Link as RouterLink,
+  LinkProps as RouterLinkProps,
+} from 'react-router-dom';
+*/
 
 // import { makeStyles } from '@material-ui/core/styles';
 
@@ -12,6 +14,7 @@ import { Container, Divider, Grid, Button, Typography, TextField, List, ListItem
 import Hero from '../components/Hero';
 import { ClinicAPI } from '../api/clinic_api';
 import { ClinicType } from '../models/clinic.interface';
+import Clinic from './Clinic';
 
 //import ClinicSearch from '../components/ClinicSearch';
 
@@ -19,11 +22,13 @@ import { ClinicType } from '../models/clinic.interface';
 
 // }));
 
+
 export const Home: FC = () => {
   // const classes = useStyles();
+
   const searchTermEl = useRef("");
 
-  const [RandomClinicData, setRandomClinicListData] = React.useState<ClinicType[]>();
+  const [RandomClinicData, setRandomClinicListData] = React.useState<any>();
   useEffect(() => {
     ClinicAPI
       .getRandomClinics()
@@ -31,23 +36,24 @@ export const Home: FC = () => {
   }, []);
   console.log(RandomClinicData);
 
+  /*
   const [btHomeClinics, setbtClinicListData] = React.useState<ClinicType[]>();
   useEffect(() => {
     ClinicAPI
       .getClinicsByZip("11211")
       .then(data => setbtClinicListData(data))
   }, []);
-  console.log(btHomeClinics);
+  console.log(btHomeClinics); */
 
-  
-
-  const [ClinicListData, setClinicListData] = React.useState<ClinicType[]>();
+  //const [ClinicListData, setClinicListData] = React.useState<ClinicType[]>();
+  const [ClinicListData, setClinicListData] = React.useState<any>();
   useEffect(() => {
     ClinicAPI
       .getClinicsByZip(searchTermEl.current)
       .then(data => setClinicListData(data))
   }, []);
   console.log(ClinicListData);
+
 
   return (
     <Container maxWidth="md">
@@ -66,7 +72,7 @@ export const Home: FC = () => {
               id="searchTerm"
               type="text"
               inputRef={searchTermEl}
-              placeholder="Enter Location"
+              placeholder="Enter Zip Code"
             />
             <Button
               variant="text"
@@ -79,38 +85,54 @@ export const Home: FC = () => {
           </form>
         </Grid>
         {/*
-            <List className="">
-                {ClinicListData?.data.map((clinic: any) =>
-                    <ListItem alignItems="flex-start" key={clinic.field_org_id}>
-                        <Link component={RouterLink} to={`/clinic/${clinic.field_org_id}`}>
-                            <ListItemText
-                                primary={clinic.title_field}
-                                secondary={
-                                    <React.Fragment>
-                                        <Typography
-                                            component="span"
-                                            variant="body2"
-                                            className=""
-                                            color="textPrimary"
-                                        >
-                                            {clinic.title_field}
-                                        </Typography>
-                                        {[
-                                            `${clinic.field_org_street1} ${clinic.field_org_street2} ${clinic.field_org_city_name}, ${clinic.field_org_state} ${clinic.field_org_zipcode}`,
-                                            clinic.field_org_phone,
-                                        ]}
-                                    </React.Fragment>
-                                }
-                            />
-                        </Link>
-                        <Divider />
-                    </ListItem>
-                )}
-            </List>
-                              */}
-        <pre>{JSON.stringify(RandomClinicData, null, 2)}</pre>
+        <List className="">
+          {RandomClinicData?.data.map((clinic: any) =>
+            <ListItem alignItems="flex-start" key={clinic.id}>
+              <Link component={RouterLink} to={`/clinic/${clinic.id}`}>
+                <ListItemText
+                  primary={clinic.title}
+                  secondary={
+                    <React.Fragment>
+                      <Typography
+                        component="span"
+                        variant="body2"
+                        className=""
+                        color="textPrimary"
+                      >
+                        {clinic.title}
+                      </Typography>
+                      {[
+                        `${clinic.location.city}, ${clinic.location.state} ${clinic.location.zipcode}`,
+                        clinic.email,
+                      ]}
+                    </React.Fragment>
+                  }
+                />
+              </Link>
+              <Divider />
+            </ListItem>
+          )}
+        </List>
+        */}
         <div>
-            
+          {RandomClinicData ?
+            <ul>
+              {
+                RandomClinicData.data.map((clinic: any) => {
+                  <li>{clinic.title}</li>
+                })
+              }
+            </ul>
+            :
+            <p>No data</p>
+          }
+        </div>
+        <div>
+          {ClinicListData ?
+            <pre>{JSON.stringify(ClinicListData, null, 2)}</pre>
+            :
+            <p>No data</p>
+          }
         </div>
       </Grid>
     </Container>

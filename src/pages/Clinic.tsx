@@ -29,9 +29,7 @@ export const Clinic: FC = () => {
             .getAClinic(param.id)
             .then(data => setClinicData(data))
     }, []);
-
-    console.log(ClinicData);
-
+    
     return (
         <Grid container>
             <PageTitle title={`Clinic: ${ClinicData?.data.name1}`} />
