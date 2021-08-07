@@ -30,7 +30,7 @@ export const Clinic: FC = () => {
             .then(data => setClinicData(data))
     }, []);
 
-    //console.log(ClinicData);
+    console.log(ClinicData);
 
     return (
         <Grid container>

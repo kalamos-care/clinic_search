@@ -21,12 +21,25 @@ import { ClinicType } from '../models/clinic.interface';
 
 export const Home: FC = () => {
   // const classes = useStyles();
-  const RandomClinics: Promise<ClinicType[]> = ClinicAPI.getRandomClinics();
-  const btHomeClinics = ClinicAPI.getClinicsByZip("11211");
-  console.log(RandomClinics);
+  const searchTermEl = useRef("");
+
+  const [RandomClinicData, setRandomClinicListData] = React.useState<ClinicType[]>();
+  useEffect(() => {
+    ClinicAPI
+      .getRandomClinics()
+      .then(data => setRandomClinicListData(data))
+  }, []);
+  console.log(RandomClinicData);
+
+  const [btHomeClinics, setbtClinicListData] = React.useState<ClinicType[]>();
+  useEffect(() => {
+    ClinicAPI
+      .getClinicsByZip("11211")
+      .then(data => setbtClinicListData(data))
+  }, []);
   console.log(btHomeClinics);
 
-  const searchTermEl = useRef("");
+  
 
   const [ClinicListData, setClinicListData] = React.useState<ClinicType[]>();
   useEffect(() => {
@@ -34,7 +47,6 @@ export const Home: FC = () => {
       .getClinicsByZip(searchTermEl.current)
       .then(data => setClinicListData(data))
   }, []);
-
   console.log(ClinicListData);
 
   return (
@@ -96,7 +108,10 @@ export const Home: FC = () => {
                 )}
             </List>
                               */}
-        <pre>{JSON.stringify(RandomClinics, null, 2)}</pre>
+        <pre>{JSON.stringify(RandomClinicData, null, 2)}</pre>
+        <div>
+            
+        </div>
       </Grid>
     </Container>
   );
