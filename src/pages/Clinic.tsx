@@ -36,7 +36,15 @@ export const Clinic: FC = () => {
         <Grid container>
             <PageTitle title={`Clinic: ${ClinicData?.data.name1}`} />
             <Grid item xs={12}>
-                <pre>{JSON.stringify(ClinicData, null, 2)}</pre>
+                <p>
+                    Address:<br />
+                    {ClinicData?.data.location.street1}<br />
+                    {ClinicData?.data.location.street2}<br />
+                    {ClinicData?.data.location.city}, {ClinicData?.data.location.state} {ClinicData?.data.location.zipcode}
+                </p>
+            </Grid>
+            <Grid item xs={12}>
+                <pre>{JSON.stringify(ClinicData?.data, null, 2)}</pre>
             </Grid>
         </Grid>
     );

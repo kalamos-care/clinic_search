@@ -18,9 +18,9 @@ const requests = {
 
 export const ClinicAPI = {
 	//getClinicsByZip: (zip: string): Promise<ClinicType[]> => requests.get('https://npin.cdc.gov/api/organization/proximity?prox[origin]=' + zip),
-	getRandomClinics: async () => requests.get(`/search`),
-	getClinicsByZip: async (zip: string) => requests.get(`/search?zip=${zip}`),
-	getAClinic: async (id: string) => requests.get(`/test-centers/${id}`),
+	getRandomClinics: async () => await requests.get(`/search`),
+	getClinicsByZip: async (zip: string) => await requests.get(`/search?zip=${zip}`),
+	getAClinic: async (id: string) => await requests.get(`/test-centers/${id}`),
 	//createPost: (post: PostType): Promise<PostType> =>
 	//	requests.post('posts', post),
 	//updatePost: (post: PostType, id: number): Promise<PostType> =>

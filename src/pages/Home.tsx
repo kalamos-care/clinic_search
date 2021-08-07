@@ -21,7 +21,7 @@ import { ClinicType } from '../models/clinic.interface';
 
 export const Home: FC = () => {
   // const classes = useStyles();
-  const RandomClinics = ClinicAPI.getRandomClinics();
+  const RandomClinics: Promise<ClinicType[]> = ClinicAPI.getRandomClinics();
   const btHomeClinics = ClinicAPI.getClinicsByZip("11211");
   console.log(RandomClinics);
   console.log(btHomeClinics);
@@ -96,7 +96,6 @@ export const Home: FC = () => {
                 )}
             </List>
                               */}
-        <pre>{JSON.stringify(ClinicListData, null, 2)}</pre>
         <pre>{JSON.stringify(RandomClinics, null, 2)}</pre>
       </Grid>
     </Container>
