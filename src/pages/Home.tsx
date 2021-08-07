@@ -78,7 +78,7 @@ export const Home: FC = () => {
               variant="text"
               color="default"
               type="button"
-              onClick={() => searchTermEl.current}
+              onClick={() => setClinicListData(ClinicAPI.getClinicsByZip(searchTermEl.current))}
             >
               Submit
             </Button>
