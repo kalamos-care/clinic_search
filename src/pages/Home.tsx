@@ -25,7 +25,7 @@ import { ClinicType } from '../models/clinic.interface';
 export const Home: FC = () => {
   // const classes = useStyles();
 
-  const searchTermEl = useRef("");
+  const searchTermEl = useRef<HTMLInputElement>(null);
 
   const [RandomClinicData, setRandomClinicListData] = React.useState<any>();
   useEffect(() => {
@@ -47,9 +47,11 @@ export const Home: FC = () => {
   //const [ClinicListData, setClinicListData] = React.useState<ClinicType[]>();
   const [ClinicListData, setClinicListData] = React.useState<any>();
   useEffect(() => {
-    ClinicAPI
-      .getClinicsByZip(searchTermEl.current)
-      .then(data => setClinicListData(data))
+    if (searchTermEl.current != null) {
+      ClinicAPI.getClinicsByZip(searchTermEl.current.value)
+        .then(data => setClinicListData(data))
+    }
+    ClinicAPI.getRandomClinics().then(data => setClinicListData(data))
   }, []);
   console.log(ClinicListData);
 
@@ -77,7 +79,12 @@ export const Home: FC = () => {
               variant="text"
               color="default"
               type="button"
-              onClick={() => setClinicListData(ClinicAPI.getClinicsByZip(searchTermEl.current))}
+              onClick={() => {
+                if(searchTermEl.current != null)
+                  ClinicAPI
+                    .getClinicsByZip(searchTermEl.current.value)
+                    .then(data => setClinicListData(data))
+                }}
             >
               Submit
             </Button>
@@ -114,7 +121,6 @@ export const Home: FC = () => {
         </List>
         */}
         <div>
-        <p>{searchTermEl.current}</p>
           {RandomClinicData ?
             <ul>
               {
@@ -129,10 +135,15 @@ export const Home: FC = () => {
         </div>
         <div>
           {ClinicListData ?
-            <pre>{JSON.stringify(ClinicListData, null, 2)}</pre>
+            <ul>
+              {ClinicListData.data.map((clinic:any) =>
+              <li>{clinic.title}</li>
+              )}
+            </ul> 
             :
             <p>No data</p>
           }
+          {/*<pre>{JSON.stringify(ClinicListData, null, 2)}</pre>*/}
         </div>
       </Grid>
     </Container>
