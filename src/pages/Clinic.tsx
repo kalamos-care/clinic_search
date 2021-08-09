@@ -2,7 +2,7 @@ import React, { FC, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 // import { makeStyles } from '@material-ui/core/styles';
 
-import { Grid } from '@material-ui/core/';
+import { Grid, Typography } from '@material-ui/core/';
 
 import PageTitle from '../components/PageTitle';
 
@@ -32,14 +32,21 @@ export const Clinic: FC = () => {
     
     return (
         <Grid container>
-            <PageTitle title={`Clinic: ${ClinicData?.data.name1}`} />
+            <PageTitle title={`${ClinicData?.data.title}`} />
             <Grid item xs={12}>
-                <p>
-                    Address:<br />
-                    {ClinicData?.data.location.street1}<br />
-                    {ClinicData?.data.location.street2}<br />
+                <Typography variant="h6">
+                    {ClinicData?.data.location.street1}
+                </Typography>
+                {/*
+                {ClinicData?.data.location.street2.length > 0
+                    <Typography variant="h6">
+                        {ClinicData?.data.location.street2}
+                    </Typography>
+                }
+                */}
+                <Typography variant="h6">
                     {ClinicData?.data.location.city}, {ClinicData?.data.location.state} {ClinicData?.data.location.zipcode}
-                </p>
+                </Typography>
             </Grid>
             <Grid item xs={12}>
                 <pre>{JSON.stringify(ClinicData?.data, null, 2)}</pre>

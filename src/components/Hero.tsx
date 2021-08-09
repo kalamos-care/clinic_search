@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(4, 0),
     },
     heroContent: {
-        padding: theme.spacing(4, 0),
+        // padding: theme.spacing(4, 0),
     },
     card: {
         padding: 4,
