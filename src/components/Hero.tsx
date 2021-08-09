@@ -42,6 +42,7 @@ export const Hero: FC = () => {
                 <Typography variant="h6" gutterBottom>It's more than that though. PreExposure Prophylaxis means taking actions to protect yourself and your community before sexual activities.</Typography>
                 <Typography variant="body1" gutterBottom>Scientific advances have started to free a generation of queer people from the shackles of the historic trauma of the AIDS Crisis. For many people, PrEP medication has replaced other forms of protection adopted during the epidemic. Expanding our definitions of PrEP is critical to further empowering and protecting our most vulnerable.</Typography>
             </Grid>
+            {/*
             <Grid item xs={12} className={classes.heroContent}>
                 <Card className={classes.card}>
                     <CardContent>
@@ -59,6 +60,7 @@ export const Hero: FC = () => {
                     </CardContent>
                 </Card>
             </Grid>
+            */}
             <Grid item xs={12} className={classes.heroContent}>
                 <Typography variant="subtitle1" gutterBottom>
                     Does Truvada prevent HIV? <a href="https://www.cdc.gov/hiv/basics/prep.html">Absolutely</a>.
@@ -83,6 +85,7 @@ export const Hero: FC = () => {
                     In fact, our definition of PEP–Post-exposure Prophylaxis–should evolve too to include getting tested, taking medication, and notifying partners. When we’re anxious, it can be difficult to know what to do, which means professional healthcare providers have work to do in making patients feel comfortable and safe in the moment.
                 </Typography>
             </Grid>
+            {/*
             <Grid item xs={12} className={classes.heroContent}>
                 <Card className={classes.card}>
                     <CardContent>
@@ -95,6 +98,7 @@ export const Hero: FC = () => {
                     </CardContent>
                 </Card>
             </Grid>
+            */}
             <Grid item xs={12} className={classes.heroContent}>
                 <Typography variant="body1" gutterBottom>
                     Being PrEPared is a spectrum. Some PrEP medication patients choose not to use any other prevention techniques, while others incorporate a multitude. Some people aren’t on PrEP medication, and rely on condoms to protect themselves and their community. One thing is universally true, we don’t talk about sexual wellness enough.
