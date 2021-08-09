@@ -14,7 +14,6 @@ import { Container, Divider, Grid, Button, Typography, TextField, List, ListItem
 import Hero from '../components/Hero';
 import { ClinicAPI } from '../api/clinic_api';
 import { ClinicType } from '../models/clinic.interface';
-import Clinic from './Clinic';
 
 //import ClinicSearch from '../components/ClinicSearch';
 
@@ -115,6 +114,7 @@ export const Home: FC = () => {
         </List>
         */}
         <div>
+        <p>{searchTermEl.current}</p>
           {RandomClinicData ?
             <ul>
               {
