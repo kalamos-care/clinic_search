@@ -78,81 +78,50 @@ export const Home: FC = () => {
               color="default"
               type="button"
               onClick={() => {
-                if(searchTermEl.current != null)
+                if (searchTermEl.current != null)
                   ClinicAPI
                     .getClinicsByZip(searchTermEl.current.value)
                     .then(data => setClinicListData(data))
-                }}
+              }}
             >
               Submit
             </Button>
           </form>
         </Grid>
-        {/*
-        <List className="">
-          {RandomClinicData?.data.map((clinic: any) =>
-            <ListItem alignItems="flex-start" key={clinic.id}>
-              <Link component={RouterLink} to={`/clinic/${clinic.id}`}>
-                <ListItemText
-                  primary={clinic.title}
-                  secondary={
-                    <React.Fragment>
-                      <Typography
-                        component="span"
-                        variant="body2"
-                        className=""
-                        color="textPrimary"
-                      >
-                        {clinic.title}
-                      </Typography>
-                      {[
-                        `${clinic.location.city}, ${clinic.location.state} ${clinic.location.zipcode}`,
-                        clinic.email,
-                      ]}
-                    </React.Fragment>
-                  }
-                />
-              </Link>
-              <Divider />
-            </ListItem>
-          )}
-        </List>
-        */}
-        <div>
+        <Grid item xs={12}>
           {ClinicListData ?
             <List className="">
-              {ClinicListData.data.map((clinic:any) =>
+              {ClinicListData.data.map((clinic: any) =>
                 <ListItem alignItems="flex-start" key={clinic.id}>
-                <Link component={RouterLink} to={`/clinic/${clinic.id}`}>
-                  <ListItemText
-                    primary={clinic.title}
-                    secondary={
-                      <React.Fragment>
-                        <Typography
-                          component="span"
-                          variant="body2"
-                          className=""
-                          color="textPrimary"
-                        >
-                          {clinic.title}
-                        </Typography>
-                        {[
-                          `${clinic.location.city}, ${clinic.location.state} ${clinic.location.zipcode}`,
-                          clinic.email,
-                        ]}
-                      </React.Fragment>
-                    }
-                  />
-                </Link>
-                <Divider />
-              </ListItem>
+                  <Link component={RouterLink} to={`/clinic/${clinic.id}`}>
+                    <ListItemText
+                      primary={clinic.title}
+                      secondary={
+                        <React.Fragment>
+                          <Typography
+                            component="span"
+                            variant="body2"
+                            className=""
+                            color="textPrimary"
+                          >
+                            {`${clinic.location.city}, ${clinic.location.state} ${clinic.location.zipcode}`}
+                          </Typography>
+                          {[
+                            ,
+                            clinic.email,
+                          ]}
+                        </React.Fragment>
+                      }
+                    />
+                  </Link>
+                  <Divider />
+                </ListItem>
               )}
             </List>
             :
             <p>No data</p>
           }
-          {/*<pre>{JSON.stringify(ClinicListData, null, 2)}</pre>*/}
-        </div>
+        </Grid>
       </Grid>
     </Container>
   );

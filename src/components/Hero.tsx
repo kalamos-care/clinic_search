@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import { Container, Grid, Typography, Card, CardContent } from '@material-ui/core';
+import { Grid, Typography, Card, CardContent } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     hero: {
@@ -61,6 +61,7 @@ export const Hero: FC = () => {
                 </Card>
             </Grid>
             */}
+            {/* 
             <Grid item xs={12} className={classes.heroContent}>
                 <Typography variant="subtitle1" gutterBottom>
                     Does Truvada prevent HIV? <a href="https://www.cdc.gov/hiv/basics/prep.html">Absolutely</a>.
@@ -74,7 +75,10 @@ export const Hero: FC = () => {
                 <Typography variant="subtitle1" gutterBottom>
                     You know what else reduces STIs – <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5763398/">talking about sexual health</a>.
                 </Typography>
-            </Grid><Grid item xs={12} className={classes.heroContent}>
+            </Grid>
+            */}
+            {/*
+            <Grid item xs={12} className={classes.heroContent}>
                 <Typography variant="body1" gutterBottom>
                     Taken at its most literal definition, pre-exposure prophylaxis is simply any preventative action taken before potentially being exposed to a pathogen. For the sake of this diatribe, I’ll keep PrEP discussions focused on sex, because hand sanitizer doesn’t really help alleviate sexual shame.
                 </Typography>
@@ -85,6 +89,7 @@ export const Hero: FC = () => {
                     In fact, our definition of PEP–Post-exposure Prophylaxis–should evolve too to include getting tested, taking medication, and notifying partners. When we’re anxious, it can be difficult to know what to do, which means professional healthcare providers have work to do in making patients feel comfortable and safe in the moment.
                 </Typography>
             </Grid>
+            */}
             {/*
             <Grid item xs={12} className={classes.heroContent}>
                 <Card className={classes.card}>
@@ -104,7 +109,7 @@ export const Hero: FC = () => {
                     Being PrEPared is a spectrum. Some PrEP medication patients choose not to use any other prevention techniques, while others incorporate a multitude. Some people aren’t on PrEP medication, and rely on condoms to protect themselves and their community. One thing is universally true, we don’t talk about sexual wellness enough.
                 </Typography>
                 <Typography variant="body1" gutterBottom>
-                    Our true mission is to empower everyone love freely, regardless of gender or sexuality. That means not only making it easier to get safer-sex supplies, but also lowering social stigma around being sexually active. We’ve barely taken our first step, but we’re excited for the journey.
+                    Our mission is to empower everyone love freely, regardless of gender or sexuality. That means not only making it easier to get safer-sex supplies, but also lowering social stigma around being sexually active. We’ve barely taken our first step, but we’re excited for the journey.
                 </Typography>
                 <Typography variant="h6" gutterBottom>If you're interested in PrEP medication or other sexual health resources, just enter your zip code below.</Typography>
             </Grid>
