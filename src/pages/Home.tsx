@@ -1,11 +1,9 @@
 import React, { FC, useContext, useEffect, useRef } from 'react';
 
-/*
 import {
   Link as RouterLink,
   LinkProps as RouterLinkProps,
 } from 'react-router-dom';
-*/
 
 // import { makeStyles } from '@material-ui/core/styles';
 
@@ -121,25 +119,35 @@ export const Home: FC = () => {
         </List>
         */}
         <div>
-          {RandomClinicData ?
-            <ul>
-              {
-                RandomClinicData.data.map((clinic: any) => {
-                  <li>{clinic.title}</li>
-                })
-              }
-            </ul>
-            :
-            <p>No data</p>
-          }
-        </div>
-        <div>
           {ClinicListData ?
-            <ul>
+            <List className="">
               {ClinicListData.data.map((clinic:any) =>
-              <li>{clinic.title}</li>
+                <ListItem alignItems="flex-start" key={clinic.id}>
+                <Link component={RouterLink} to={`/clinic/${clinic.id}`}>
+                  <ListItemText
+                    primary={clinic.title}
+                    secondary={
+                      <React.Fragment>
+                        <Typography
+                          component="span"
+                          variant="body2"
+                          className=""
+                          color="textPrimary"
+                        >
+                          {clinic.title}
+                        </Typography>
+                        {[
+                          `${clinic.location.city}, ${clinic.location.state} ${clinic.location.zipcode}`,
+                          clinic.email,
+                        ]}
+                      </React.Fragment>
+                    }
+                  />
+                </Link>
+                <Divider />
+              </ListItem>
               )}
-            </ul> 
+            </List>
             :
             <p>No data</p>
           }
