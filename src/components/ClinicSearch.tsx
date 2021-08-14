@@ -6,7 +6,7 @@ import { Button, TextField, Grid, Typography, List, ListItem, ListItemText, Link
 
 //import ClinicList from './ClinicList';
 import { ClinicAPI } from '../api/clinic_api';
-i//mport { ClinicType } from '../models/clinic.interface';
+//import { ClinicType } from '../models/clinic.interface';
 
 // ClinicSearch should handle the request for data and then pass that to ClinicList. ClinicList currently has that functionality.
 // Got useEffect code from https://reactjs.org/docs/faq-ajax.html because Axios wasn't working
