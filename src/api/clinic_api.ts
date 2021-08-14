@@ -1,6 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-//import { request } from 'http';
-import { ClinicType } from '../models/clinic.interface';
+//import { ClinicType } from '../models/clinic.interface';
 
 const instance = axios.create({
     baseURL: 'https://underwater.hack.fail/v1',
@@ -18,7 +17,7 @@ const requests = {
 
 export const ClinicAPI = {
 	//getClinicsByZip: (zip: string): Promise<ClinicType[]> => requests.get('https://npin.cdc.gov/api/organization/proximity?prox[origin]=' + zip),
-	getRandomClinics: async () => await requests.get(`/search`),
+	getBaseClinics: async () => await requests.get(`/search`),
 	getClinicsByZip: async (zip: string) => await requests.get(`/search?zip=${zip}`),
 	getAClinic: async (id: string) => await requests.get(`/test-centers/${id}`),
 	//createPost: (post: PostType): Promise<PostType> =>
