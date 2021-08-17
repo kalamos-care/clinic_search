@@ -37,15 +37,15 @@ export const Clinic: FC = () => {
         if (navigator.share) {
             navigator
               .share({
-                title: `title`,
-                text: `text`,
+                title: `${ClinicData?.data.title}`,
+                text: `Check out this clinic on Kalamos`,
                 url: document.location.href,
               })
               .then(() => {
                 console.log('Successfully shared');
               })
               .catch(error => {
-                console.error('Something went wrong sharing the blog', error);
+                console.error('Something went wrong. Please check your browser.', error);
               });
           }
       };
