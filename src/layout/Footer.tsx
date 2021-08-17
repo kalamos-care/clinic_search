@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
   divider: {
     margin: theme.spacing(4),
   },
+  footerLink: {
+    textDecoration: "none",
+  }
 }));
 
 // const socials = [
@@ -131,7 +134,7 @@ const Footer: FC = () => {
           </ul>
            */}
           <Typography variant="body1" color="textPrimary" gutterBottom>
-            The code for this website is available for free on GitHub
+            The code for this website is available for free <a href="https://github.com/kalamos-care" className={classes.footerLink}>on GitHub</a>
           </Typography>
           <Copyright />
         </Grid>
