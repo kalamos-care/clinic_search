@@ -2,7 +2,8 @@ import { FC } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import { Grid, Typography, Card, CardContent } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
+// import { Card, CardContent } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     hero: {
@@ -31,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Hero: FC = () => {
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
+    // const bull = <span className={classes.bullet}>•</span>;
 
     return (
         <Grid container justify="center" className={classes.hero}>

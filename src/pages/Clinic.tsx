@@ -2,7 +2,8 @@ import React, { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 // import { makeStyles } from '@material-ui/core/styles';
 
-import { Grid, Typography, Button } from '@material-ui/core/';
+import { Grid, Typography, Button, IconButton } from '@material-ui/core/';
+import ShareIcon from '@material-ui/icons/Share';
 
 import PageTitle from '../components/PageTitle';
 
@@ -32,11 +33,28 @@ export const Clinic: FC = () => {
 
     const [show, setShow] = useState(false);
 
+    const handleShareOnClick = () => {
+        if (navigator.share) {
+            navigator
+              .share({
+                title: `title`,
+                text: `text`,
+                url: document.location.href,
+              })
+              .then(() => {
+                console.log('Successfully shared');
+              })
+              .catch(error => {
+                console.error('Something went wrong sharing the blog', error);
+              });
+          }
+      };
+
     return (
         <>
             <Grid container>
                 <PageTitle title={`${ClinicData?.data.title}`} />
-                <Grid item xs={12}>
+                <Grid item xs={11}>
                     <Typography variant="h6">
                         {ClinicData?.data.location.street1}
                     </Typography>
@@ -50,6 +68,14 @@ export const Clinic: FC = () => {
                     <Typography variant="h6">
                         {ClinicData?.data.location.city}, {ClinicData?.data.location.state} {ClinicData?.data.location.zipcode}
                     </Typography>
+                </Grid>
+                <Grid item xs={1}>
+                    <IconButton 
+                        aria-label="share" 
+                        onClick={handleShareOnClick}
+                    >
+                        <ShareIcon />
+                    </IconButton>
                 </Grid>
             </Grid>
             <Grid container>
