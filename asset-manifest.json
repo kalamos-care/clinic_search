@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.js": "/static/js/main.35725b8b.chunk.js",
-    "main.js.map": "/static/js/main.35725b8b.chunk.js.map",
+    "main.js": "/static/js/main.00e830ea.chunk.js",
+    "main.js.map": "/static/js/main.00e830ea.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ef5ef639.js",
     "runtime-main.js.map": "/static/js/runtime-main.ef5ef639.js.map",
     "static/css/2.32632296.chunk.css": "/static/css/2.32632296.chunk.css",
-    "static/js/2.74b93fe4.chunk.js": "/static/js/2.74b93fe4.chunk.js",
-    "static/js/2.74b93fe4.chunk.js.map": "/static/js/2.74b93fe4.chunk.js.map",
+    "static/js/2.1b72281e.chunk.js": "/static/js/2.1b72281e.chunk.js",
+    "static/js/2.1b72281e.chunk.js.map": "/static/js/2.1b72281e.chunk.js.map",
     "static/js/3.5689b6d9.chunk.js": "/static/js/3.5689b6d9.chunk.js",
     "static/js/3.5689b6d9.chunk.js.map": "/static/js/3.5689b6d9.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.32632296.chunk.css.map": "/static/css/2.32632296.chunk.css.map",
-    "static/js/2.74b93fe4.chunk.js.LICENSE.txt": "/static/js/2.74b93fe4.chunk.js.LICENSE.txt",
+    "static/js/2.1b72281e.chunk.js.LICENSE.txt": "/static/js/2.1b72281e.chunk.js.LICENSE.txt",
     "static/media/GT-Haptik-Medium-2.c5fc3759.woff2": "/static/media/GT-Haptik-Medium-2.c5fc3759.woff2",
     "static/media/index.css": "/static/media/arimo-vietnamese-400-normal.c0af09a9.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.ef5ef639.js",
     "static/css/2.32632296.chunk.css",
-    "static/js/2.74b93fe4.chunk.js",
-    "static/js/main.35725b8b.chunk.js"
+    "static/js/2.1b72281e.chunk.js",
+    "static/js/main.00e830ea.chunk.js"
   ]
 }
