@@ -8,17 +8,19 @@ import { Button, TextField, Grid, Typography, List, ListItem, ListItemText, Link
 import { ClinicAPI } from '../api/clinic_api';
 //import { ClinicType } from '../models/clinic.interface';
 
+/*
 import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   clinicsList: {
 
   },
 }));
+*/
 
 // ClinicSearch should handle the request for data and then pass that to ClinicList. ClinicList currently has that functionality.
 
 const ClinicSearch: FC = () => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   const searchTermEl = useRef<HTMLInputElement>(null);
 
@@ -68,7 +70,7 @@ const ClinicSearch: FC = () => {
       {/* <ClinicList zip={searchTermEl.current.value} /> */}
       <Grid item xs={12}>
         {ClinicListData ?
-          <List className="clinicsList">
+          <List>
             {ClinicListData.data.map((clinic: any) =>
               <ListItem alignItems="flex-start" key={clinic.id}>
                 <Link component={RouterLink} to={`/clinic/${clinic.id}`}>
@@ -92,7 +94,7 @@ const ClinicSearch: FC = () => {
             )}
           </List>
           :
-          <p>No data</p>
+          <pre>No data</pre>
         }
       </Grid>
     </Grid>
