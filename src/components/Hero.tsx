@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export const Hero: FC = () => {
+const Hero: FC = () => {
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
 
